@@ -31,6 +31,7 @@ export default {
     };
   },
   methods: {
+    // Function to create a new task object and emit an event to the parent component
     addTask() {
       const id = Date.now();
       const newTask = {

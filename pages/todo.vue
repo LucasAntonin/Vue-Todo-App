@@ -1,7 +1,7 @@
 <template>
   <div>
     <Navbar />
-    <Tasks />
+    <ToDoList />
   </div>
 </template>
 

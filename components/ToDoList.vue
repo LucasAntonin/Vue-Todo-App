@@ -1,11 +1,11 @@
 <template>
-  <div class="flex justify-center items-center dark:bg-black">
+  <div class="flex justify-center items-center">
     <div class="container p-4 mt-5">
       <div
-        class="min-w-md p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+        class="min-w-md p-6 bg-white border border-gray-200 rounded-lg shadow"
       >
         <h1 class="text-4xl font-bold mb-4">To-Do List</h1>
-        <TaskAddForm :tasks="pendingTasks" @on-add-task="addTask" />
+        <TaskForm :tasks="pendingTasks" @on-add-task="addTask" />
         <h1 class="text-xl font-bold mt-3 mb-2">To-Do</h1>
         <draggable
           v-model="pendingTasks"
@@ -26,7 +26,7 @@
           <span></span>
           <button
             type="button"
-            class="text-white bg-red-600 hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900"
+            class="text-white bg-red-600 hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2"
             @click="deleteAllTasks"
           >
             Delete All Tasks
@@ -58,6 +58,11 @@ export default {
       const tasksJson = localStorage.getItem("tasks");
       if (tasksJson) {
         const allTasks = JSON.parse(tasksJson);
+
+        allTasks.forEach((task) => {
+          task.editing = false;
+        });
+
         this.pendingTasks = allTasks.filter((task) => !task.done);
         this.doneTasks = allTasks.filter((task) => task.done);
       }
