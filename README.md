@@ -1,4 +1,7 @@
-# to-do-list
+# Vue-Todo-App
+
+A simple and responsive Todo App built using Vue.js and Nuxt.js. The application allows users to add, edit, and delete tasks. This project also includes unit tests using Vue Test Utils and Jest, and enforces code style with ESLint.
+
 
 ## Build Setup
 
@@ -15,6 +18,12 @@ $ npm run start
 
 # generate static project
 $ npm run generate
+
+# run tests
+$ npm run test
+
+# lint and fix files
+$ npm run lint
 ```
 
 For detailed explanation on how things work, check out the [documentation](https://nuxtjs.org).
