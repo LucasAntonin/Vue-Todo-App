@@ -1,14 +1,14 @@
 import { shallowMount } from "@vue/test-utils";
-import TaskAddForm from "@/components/TaskAddForm.vue";
+import TaskForm from "@/components/TaskForm.vue";
 
-describe("TaskAddForm.vue", () => {
+describe("TaskForm.vue", () => {
   test("renders the component", () => {
-    const wrapper = shallowMount(TaskAddForm);
+    const wrapper = shallowMount(TaskForm);
     expect(wrapper.exists()).toBe(true);
   });
 
   test("emits 'on-add-task' event with new task data when form is submitted", async () => {
-    const wrapper = shallowMount(TaskAddForm);
+    const wrapper = shallowMount(TaskForm);
     const input = wrapper.find("input");
     const newTaskName = "New Task";
 

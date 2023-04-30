@@ -1,9 +1,9 @@
 import { shallowMount } from "@vue/test-utils";
-import Tasks from "@/components/Tasks.vue";
+import ToDoList from "@/components/ToDoList.vue";
 
-describe("Tasks.vue", () => {
+describe("ToDoList.vue", () => {
   test("renders the component", () => {
-    const wrapper = shallowMount(Tasks);
+    const wrapper = shallowMount(ToDoList);
     expect(wrapper.exists()).toBe(true);
   });
 });
