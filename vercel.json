@@ -1,29 +1,9 @@
 {
   "version": 2,
-  "name": "Vue-Todo-App",
   "builds": [
     {
       "src": "nuxt.config.js",
-      "use": "@nuxtjs/vercel-builder",
-      "config": {
-        "serverFiles": ["*"]
-      }
-    }
-  ],
-  "routes": [
-    {
-      "src": "/_nuxt/.+",
-      "headers": { "Cache-Control": "public, max-age=31536000" }
-    },
-    {
-      "src": "/sw.js",
-      "dest": "/_nuxt/static/sw.js",
-      "headers": { "Cache-Control": "public, max-age=43200, immutable" }
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/",
-      "headers": { "Cache-Control": "public, max-age=0, must-revalidate" }
+      "use": "@nuxtjs/vercel-builder"
     }
   ]
 }
